@@ -1,0 +1,47 @@
+﻿<Window x:Class="CashPrinter.Views.SettingsWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:CashPrinter.Views"
+		xmlns:vm="clr-namespace:CashPrinter.ViewModels"
+		mc:Ignorable="d" Height="250" Width="350"  WindowStartupLocation="CenterOwner" ShowInTaskbar="False" SizeToContent="Height" Title="Налаштування">
+	<Window.DataContext>
+		<vm:SettingsViewModel/>
+	</Window.DataContext>
+	
+	<Grid >
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+			<RowDefinition Height="auto"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="auto"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		
+		<Label Grid.Row="0" Padding="1" Margin="5">Назва робочої станції</Label>
+		<TextBox Grid.Row="0" Grid.Column="1" Margin="5" VerticalAlignment="Center" Text="{ Binding WorkstationName}"/>
+		
+		<Label Grid.Row="1" Padding="1" Margin="5">Інтервал опитування черги, мс</Label>
+		<TextBox Grid.Row="1" Grid.Column="1" Margin="5" VerticalAlignment="Center" Text="{ Binding DatabaseQueryinterval}"/>
+
+		<Label Grid.Row="2" Padding="1" Margin="5">Ширина стрічки 57 мм:</Label>
+		<CheckBox Grid.Row="2" Grid.Column="1" Margin="5" VerticalAlignment="Center" IsChecked="{Binding isTapeWidth_57mm}"></CheckBox>
+
+        <Label Grid.Row="3" Padding="1" Margin="5">Пристрій для друку:</Label>
+        <ComboBox Grid.Row="3" Grid.Column="1" Margin="5" ItemsSource="{Binding CashPrinterType_Items}" SelectedItem="{Binding CashPrinterType_SelectedItem}" />
+
+        <Label Grid.Row="4" Padding="1" Margin="5" Visibility="{Binding ThermalPrinterNameVisibility}">Ім'я термо-принтера:</Label>
+        <ComboBox Grid.Row="4" Grid.Column="1" Margin="5" Visibility="{Binding ThermalPrinterNameVisibility}" ItemsSource="{Binding ThermalPrinterName_Items}" SelectedItem="{Binding ThermalPrinterName_SelectedItem}" />
+
+        <WrapPanel Grid.Row="6" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+			<Button Margin="5" Padding="5" HorizontalAlignment="Center" MinWidth="70" IsDefault="True" IsCancel="True">OK</Button>
+		</WrapPanel>
+	</Grid>
+</Window>

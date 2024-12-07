@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CashPrinter.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="WorkstationName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\\eapl2\41***</Value>
+    </Setting>
+    <Setting Name="DatabaseQueryinterval" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5000</Value>
+    </Setting>
+    <Setting Name="isDatecsTapeWidth_57mm" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CashPrinterType" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="ThermalPrinterName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ConnectionString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">User Id=***; Password=***; Data Source=MainDataSource</Value>
+    </Setting>
+    <Setting Name="EcheckUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">localhost://echeck/hs/receipt/getpdf</Value>
+    </Setting>
+    <Setting Name="EcheckAuth" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Bearer *****</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
